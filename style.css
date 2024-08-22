@@ -162,14 +162,97 @@
     font-size: 20px;
   }
 
+
+
+  .head-title {
+    color: rgb(241 245 249);
+    font-size: 20px;
+    margin-left: 80px;
+  }
+
+
+
   .home {
-    text-underline-offset: 8px;
+    text-underline-offset: 5px;
     color: rgb(241 245 249);
     text-decoration-line: underline;
     text-decoration-thickness: 2px;
+    margin-right: 30px;
+    transition: all 0.2s;
   }
 
-  @media screen and (max-width: 600px) {
+  .event {
+    text-underline-offset: 5px;
+    color: rgba(241, 245, 249, 0.61);
+    text-decoration-thickness: 0px;
+    margin-right: 30px;
+    transition: all 0.2s;
+  }
+
+  .rank {
+    text-underline-offset: 5px;
+    color: rgba(241, 245, 249, 0.61);
+    text-decoration-thickness: 2px;
+    margin-right: 30px;
+    transition: all 0.2s;
+  }
+
+  .galery {
+    text-underline-offset: 5px;
+    color: rgba(241, 245, 249, 0.61);
+    text-decoration-thickness: 2px;
+    margin-right: 80px;
+    transition: all 0.2s;
+  }
+
+  .event:hover {
+    text-underline-offset: 6px;
+    color: rgb(241, 245, 249);
+    text-decoration-line: underline;
+    text-decoration-thickness: 1px;
+  }
+
+  .rank:hover {
+    text-underline-offset: 6px;
+    color: rgb(241, 245, 249);
+    text-decoration-line: underline;
+    text-decoration-thickness: 1px;
+  }
+
+  .galery:hover {
+    text-underline-offset: 6px;
+    color: rgb(241, 245, 249);
+    text-decoration-line: underline;
+    text-decoration-thickness: 1px;
+  }
+
+  
+
+  .head-1 {
+    height: 60px;
+  }
+
+  .head-2 {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+  }
+
+  .head-page {
+    display: flex;
+  }
+
+  @media screen and (max-width: 700px) {
+    .head-page {
+      visibility: hidden;
+    }
+
+    .head-title {
+      color: rgb(241 245 249);
+      font-size: 20px;
+      margin-left: 30px;
+    }
+
     .hero {
       width: 100%;
       height: 100vh;
