@@ -15,6 +15,7 @@
 .kontainer {
   height: 100vh;
   width: 100%;
+  position: relative;
   top: 0;
   left: 0;
   z-index: -1;
@@ -24,10 +25,6 @@
   height: 100%;
   width: 100%;
   background-image: linear-gradient(to top, black, transparent);
-}
-
-.navbar-solid {
-  background-color: black;
 }
 
 body {
