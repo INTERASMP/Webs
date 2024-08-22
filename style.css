@@ -23,7 +23,7 @@
   height: 100%;
   width: 100%;
   position: absolute;
-  background-image: linear-gradient(to top, blue, transparent);
+  background-image: linear-gradient(to top, black, transparent);
 }
 
 .navbar-solid {
