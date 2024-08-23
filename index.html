@@ -8,31 +8,27 @@
     <link href="./src/output.css" rel="stylesheet">
     <script defer src="script.js"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="font.css">
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-
-      
-
       <nav class="navbar">
         <div class="head-1">
           <div class="head-2">
-            <div class="head-title poppins-semibold">
+            <div class="head-title prompt-semibold">
               <p>interaSMP</p>
             </div>
             <div class="head-page">
-              <a href="#" class="home poppins-semibold ">Home</a>
-              <a href="#" class="event poppins-medium ">Events</a>
-              <a href="#" class="rank poppins-medium ">Ranks</a>
-              <a href="#" class="galery poppins-medium ">Gallery</a>
+              <a href="#" class="home prompt-semibold ">Home</a>
+              <a href="#" class="event prompt-medium ">Events</a>
+              <a href="#" class="rank prompt-medium ">Ranks</a>
+              <a href="#" class="galery prompt-medium ">Gallery</a>
             </div>
           </div>
-
-          
         </div>
       </nav>
 
@@ -40,15 +36,114 @@
 
       <div class="gradient">
         <div class="hero items-center pl-2">
-          <p class="title poppins-semibold antialiased text-slate-50">
+          <img class="logo" src="./data/img/logo.png" alt="logo" draggable="false">
+          <p class="title prompt-semibold antialiased text-slate-50">
             interaSMP NEWERA
-            <p class="subtitle poppins-medium antialiased text-slate-400">
+            <p class="subtitle prompt-medium antialiased text-slate-400">
               Nikmati pengalaman bermain anda di interaSMP!
             </p>
+            
+        </div>
+      </div>
+
+      <div class="status">
+
+        <div class="left">
+          <div class="left-1">
+            
+            <div class="server-ip on-player">
+              <div class="ip-bg">
+                <p class="int prompt-normal" id="ipServer">Load...</p>
+              </div>
+              <div class="prt-bg">
+                <p class="int prompt-normal" id="portServer">Load...</p>
+              </div>
+            </div>
+  
+      
+            <div class="server-players on-player">
+              <p class="str prompt-semibold ">Online</p>
+              <div class="int-bg">
+                <p class="int prompt-normal" id="playerCount">Load...</p>
+              </div>
+            </div>
+      
+            <div class="on-player-1">
+              <div class="server-status on-player">
+                <p class="str prompt-semibold ">Status</p>
+                <div class="int-bg">
+                <p class="int prompt-normal" id="serverStats">Load...</p>
+                </div>
+              </div>
+              
+              <div class="server-version on-player">
+                <p class="str prompt-semibold ">Version</p>
+                <div class="int-bg">
+                <p class="int prompt-normal" id="versionServer">Load...</p>
+                </div>
+              </div>
+              
+            </div>
+
+          </div>
+        </div>
+
+        <div class="right">
+          <h3 class="info-title prompt-semibold">
+            Information
+          </h3>
+          <p class="info-sub prompt-medium">
+            interaSMP mulai dibuat pada tanggal 23 July 2024. interaSMP adalah sebuah Server Survival Economy dengan banyak fitur untuk mendukung pengalaman bermain yang lebih Menyenangkan!
           </p>
         </div>
       </div>
+
+      
+      
       <img class="top-img" src="./data/img/home-img.png" alt="">
+
+    <script>
+      function fetchData() {
+            fetch('https://api.mcstatus.io/v2/status/bedrock/interasmp.ddns.net:25602')
+
+                .then(response => response.json())
+                .then(data => {
+                    // Update HTML with the data obtained
+                    let onlineStatus = 'Offline';
+                    if (data.online === true) {
+                        onlineStatus = 'Online';
+                    }
+                    document.getElementById('serverStats').innerHTML = onlineStatus;
+                    document.getElementById('playerCount').innerHTML = `${data.players.online}/${data.players.max}`;
+                    document.getElementById('ipServer').innerHTML = data.host;
+                    document.getElementById('portServer').innerHTML = data.port;
+                    document.getElementById('versionServer').innerHTML = data.version.name;
+
+                    // Log to console that the data was successfully updated
+                    console.log('Data updated successfully');
+                })
+                .catch(error => {
+                    // Display error in HTML elements
+                    document.getElementById('serverStats').innerHTML = 'Error fetching data.';
+                    document.getElementById('playerCount').innerHTML = 'Error fetching data.';
+                    document.getElementById('ipServer').innerHTML = 'Error fetching data.';
+                    document.getElementById('portServer').innerHTML = 'Error fetching data.';
+
+                    // Log the error to the console
+                    console.error('Error:', error);
+                });
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+          
+            // Fetch data when the page loads
+            fetchData();
+
+            // Fetch data every 10 seconds
+            setInterval(fetchData, 1000);
+        });
+
+    </script>
 
 </body>
 </html>

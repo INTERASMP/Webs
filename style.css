@@ -1,115 +1,8 @@
-.poppins-thin {
-  font-family: "Poppins", sans-serif;
-  font-weight: 100;
-  font-style: normal;
+body {
+  height: 5000px;
+  position: relative;
+  background-color: #e2e8f0;
 }
-
-.poppins-extralight {
-  font-family: "Poppins", sans-serif;
-  font-weight: 200;
-  font-style: normal;
-}
-
-.poppins-light {
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-}
-
-.poppins-regular {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.poppins-medium {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-style: normal;
-}
-
-.poppins-semibold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-style: normal;
-}
-
-.poppins-bold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.poppins-extrabold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 800;
-  font-style: normal;
-}
-
-.poppins-black {
-  font-family: "Poppins", sans-serif;
-  font-weight: 900;
-  font-style: normal;
-}
-
-.poppins-thin-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 100;
-  font-style: italic;
-}
-
-.poppins-extralight-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 200;
-  font-style: italic;
-}
-
-.poppins-light-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-  font-style: italic;
-}
-
-.poppins-regular-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: italic;
-}
-
-.poppins-medium-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-style: italic;
-}
-
-.poppins-semibold-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-style: italic;
-}
-
-.poppins-bold-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-  font-style: italic;
-}
-
-.poppins-extrabold-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 800;
-  font-style: italic;
-}
-
-.poppins-black-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 900;
-  font-style: italic;
-}
-
-
-
-
-
 
 .top-img {
     width: 100%;
@@ -122,20 +15,17 @@
     filter: brightness(0.7);
   }
   
-  body {
-    height: 5000px;
-    position: relative;
-  }
-  
   .navbar {
     position: fixed;
-
+    z-index: 10;
     width: 100%;
     transition: all 0.7s;
   }
-  
-  .test {
-    background-color: black;
+
+  .bg-color {
+    background-color: #1d4fd8da;
+    backdrop-filter: blur(10px);
+    
   }
   
   .gradient {
@@ -148,7 +38,7 @@
     width: 100%;
     height: 100vh;
     padding-left: 80px;
-    padding-top: 300px;
+    padding-top: 250px;
   }
 
   .title {
@@ -239,10 +129,180 @@
   }
 
   .head-page {
+    
     display: flex;
+    
   }
 
+  .logo {
+    width: 150px;
+    right: 0px;
+    bottom: 0px;
+    margin-bottom: 20px;
+
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    z-index: 8;
+  }
+
+  @keyframes floating {
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(0, 10px); }
+    100%   { transform: translate(0, -0px); }    
+}
+
+
+  .on-player {
+    width: fit-content;
+    display: flex;
+    align-content: center;
+    background-color: #0f172a;
+    
+  }
+
+  .on-player-1 {
+    width: fit-content;
+    background-color: #0f172a;
+    align-content: center;
+    border-radius: 10px;
+  }
+
+
+  .server-ip {
+    padding: 5px 15px 5px 15px;
+    border-radius: 10px;
+    margin: 0px 0px 10px 0px;
+  }
+
+  .server-port {
+    padding: 5px 15px 5px 15px;
+    border-radius: 10px;
+    margin: 0px 0px 10px 0px;
+  }
+
+  .server-players {
+    padding: 5px 15px 5px 15px;
+    border-radius: 10px;
+    margin: 0px 0px 10px 0px;
+  }
+
+  .server-status {
+    padding: 5px 15px 5px 15px;
+    border-radius: 10px;
+    margin: 0px 0px 0px 0px;
+  }
+
+  .server-version {
+    padding: 5px 15px 5px 15px;
+    border-radius: 10px;
+    margin: 0px 0px 0px 0px;
+  }
+
+
+  .str {
+    color: #e2e8f0;
+    font-size: 20px;
+    min-width: 202px;
+  }
+
+  .int {
+    color: rgba(255, 255, 255, 0.712);
+    text-align: center;
+    font-size: 17px;
+  }
+
+  .int-bg {
+    background-color: rgb(20, 122, 218);
+    align-content: center;
+    margin: 0px 0px 0px 5px;
+    min-width: 80px;
+    min-height: 35px;
+    border-radius: 8px;
+
+  }
+
+  .ip-bg {
+    background-color: rgb(20, 122, 218);
+    align-content: center;
+    min-width: 202px;
+    min-height: 35px;
+    border-radius: 8px;
+
+  }
+
+  .prt-bg {
+    background-color: rgb(20, 122, 218);
+    align-content: center;
+    margin: 0px 0px 0px 5px;
+    min-width: 80px;
+    min-height: 35px;
+
+    border-radius: 8px;
+
+  }
+
+  .right {
+    margin: 0px 0px 0px 40px;
+  }
+
+  .info-title {
+    font-size: 30px;
+    color: #1e293b;
+  }
+
+  .info-sub {
+    font-size: 20px;
+    color: #64748b;
+
+  }
+
+  .status {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    position: absolute;
+    padding: 50px 80px 0px 80px;
+    z-index: 1;
+  }
+
+  
+
   @media screen and (max-width: 700px) {
+
+    .status {
+      width: 100%;
+      height: 400px;
+      align-content: center;
+      align-items: center;
+      display: unset;
+      padding: 50px 55px 0px 55px;
+      z-index: 1;
+    }
+
+    .right {
+      margin: 40px 0px 0px 0px;
+    }
+  
+    .info-title {
+      font-size: 30px;
+      color: #1e293b;
+    }
+  
+    .info-sub {
+      font-size: 20px;
+      color: #64748b;
+      text-align: justify;
+    }
+
+    .navbar {
+      position: fixed;
+      z-index: 10;
+      width: 100%;
+      transition: all 0.7s;
+    }
+
     .head-page {
       visibility: hidden;
     }
@@ -251,6 +311,15 @@
       color: rgb(241 245 249);
       font-size: 20px;
       margin-left: 30px;
+  
+    }
+
+    .logo {
+      width: 150px;
+      right: 0px;
+      bottom: 0px;
+      margin: auto;
+      z-index: 8;
     }
 
     .hero {
@@ -258,7 +327,7 @@
       height: 100vh;
       padding-left: 42px;
       padding-right: 42px;
-      padding-top: 300px;
+      padding-top: 280px;
     }
 
     .gradient {
@@ -275,5 +344,6 @@
     .title {
       font-size: 36px;
       line-height: 45px;
+      margin-top: 40px;
     }
   }
