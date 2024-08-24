@@ -2,6 +2,28 @@ body {
   height: 5000px;
   position: relative;
   background-color: #e2e8f0;
+  transition: all 0.7s;
+
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #1d4fd8da; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #ffffff; 
 }
 
 .top-img {
@@ -39,17 +61,23 @@ body {
     height: 100vh;
     padding-left: 80px;
     padding-top: 250px;
+    transition: all 0.7s;
+
   }
 
   .title {
     font-size: 80px;
     line-height: 85px;
+    transition: all 0.2s;
+
   }
 
   .subtitle {
     color: rgb(148 163 184);
     margin-top: 20px;
     font-size: 20px;
+    transition: all 0.2s;
+
   }
 
 
@@ -58,23 +86,161 @@ body {
     color: rgb(241 245 249);
     font-size: 20px;
     margin-left: 80px;
+    transition: all 0.7s;
+
   }
 
+  .head-page-mobile {
+    background-color: #0f172a;
+  }
 
-
-  .home {
-    text-underline-offset: 5px;
-    color: rgb(241 245 249);
-    text-decoration-line: underline;
-    text-decoration-thickness: 2px;
-    margin-right: 30px;
+  .hamburger {
+    visibility: collapse;
+    padding: 6px 7px 5px 7px;
+    margin-top: 12px;
+    right: 23px;
+    font-size: 25px;
+    color: #e2e8f0;
+    position: absolute;
+    background-color: #e2e8f000;
+    z-index: 11;
+    border-radius: 5px;
+    cursor: pointer;
     transition: all 0.2s;
+
+  }
+
+  .hamburger:hover {
+    background-color: #0f172a44;
+  }
+
+  .mobile-menu {
+    display: none;
+    background-color: #e2e8f0;
+    position: fixed;
+    width: 250px;
+    height: fit-content;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    box-shadow: 0 0px 50px 4px rgb(0 0 0 / 0.25);
+    border-radius: 10px;
+    border-color: #0f172a;
+    z-index: 10;
+    right: 23px;
+    top: 70px;
+    transition: all 0.7s;
+
+  }
+
+  .mobile-menu.open {
+    display: block;
+
+  }
+
+  .hamburger.open {
+    background-color: #e2e8f0;
+    color: #0f172a;
+
+  }
+
+  .menu-mobile-page { 
+    height: 38px;
+    align-content: center;
+    margin: 10px 10px 0px 10px;
+    background-color: #0f172a;
+    color: #e2e8f0;
+    border-radius: 5px;
+    transition: all 0.2s;
+
+  }
+
+  .menu-mobile {
+    
+    height: 38px;
+    align-content: center;
+    margin: 10px 10px 0px 10px;
+    background-color: #0f172a23;
+    color: #0f172a;
+    border-radius: 5px;
+    transition: all 0.2s;
+
+  }
+
+  .menu-mobile-b {
+    height: 38px;
+    align-content: center;
+    margin: 10px 10px 10px 10px;
+    background-color: #0f172a23;
+    border-radius: 5px;
+    color: #0f172a;
+    transition: all 0.2s;
+
+  }
+
+  .menu-mobile-b-page {
+    height: 38px;
+    align-content: center;
+    margin: 10px 10px 10px 10px;
+    background-color: #0f172a23;
+    border-radius: 5px;
+    color: #e2e8f0;
+    transition: all 0.2s;
+
+  }
+
+  .home-m {
+    font-size: 18px;
+    width: 100px;
+  }
+
+  .event-m {
+    font-size: 18px;
+    width: 100px;
+  }
+
+  .rank-m {
+    font-size: 18px;
+    width: 100px;
+  }
+
+  .galery-m {
+    font-size: 18px;
+    width: 100px;
+  }
+
+  .menu-mobile:hover {
+    height: 38px;
+    align-content: center;
+    margin: 10px 10px 0px 10px;
+    background-color: #0f172a;
+    color: #e2e8f0;
+    border-radius: 5px;
+  }
+
+  .menu-mobile-b:hover {
+    height: 38px;
+    align-content: center;
+    margin: 10px 10px 10px 10px;
+    background-color: #0f172a;
+    border-radius: 5px;
+    color: #e2e8f0;;
   }
 
   .event {
     text-underline-offset: 5px;
     color: rgba(241, 245, 249, 0.61);
     text-decoration-thickness: 0px;
+    margin-right: 30px;
+    transition: all 0.2s;
+  }
+
+  .home {
+    text-underline-offset: 5px;
+    color: #e2e8f0;
+    text-decoration-thickness: 0px;
+    text-decoration-line: underline;
+    text-decoration-thickness: 2px;
     margin-right: 30px;
     transition: all 0.2s;
   }
@@ -129,7 +295,8 @@ body {
   }
 
   .head-page {
-    
+    visibility: unset;
+    transition: all 0.2s;
     display: flex;
     
   }
@@ -139,13 +306,40 @@ body {
     right: 0px;
     bottom: 0px;
     margin-bottom: 20px;
-
+    transition: all 0.2s;
+    margin: unset;
     animation-name: floating;
     animation-duration: 3s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
     z-index: 8;
   }
+
+  .bug-reports {
+    width: 150px;
+    height: 60px;
+    background-color: #ffffff;
+    align-content: center;
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    border-radius: 50px;
+    bottom: 3vh;
+    right: 3vh;
+    position: fixed;
+    z-index: 9;
+    cursor: pointer;
+    transition: all 0.2s;
+
+  }
+
+  .bug-text {
+    font-size: 20px;
+    text-align: center;
+    color: #0f172a;
+    transition: all 0.2s;
+
+  }
+
+  
 
   @keyframes floating {
     0% { transform: translate(0,  0px); }
@@ -159,6 +353,8 @@ body {
     display: flex;
     align-content: center;
     background-color: #0f172a;
+    transition: all 0.2s;
+
     
   }
 
@@ -167,6 +363,8 @@ body {
     background-color: #0f172a;
     align-content: center;
     border-radius: 10px;
+    transition: all 0.2s;
+
   }
 
 
@@ -271,6 +469,34 @@ body {
 
   @media screen and (max-width: 700px) {
 
+    .hamburger {
+      visibility: visible;
+    }
+
+    .mobile-menu {
+      visibility: visible;
+    }
+
+    .bug-reports {
+      width: 120px;
+      height: 40px;
+      background-color: #ffffff;
+      align-content: center;
+      box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+      border-radius: 50px;
+      bottom: 2vh;
+      right: 2vh;
+      position: fixed;
+      z-index: 9;
+      cursor: pointer;
+    }
+  
+    .bug-text {
+      font-size: medium;
+      text-align: center;
+      color: #0f172a;
+    }
+
     .status {
       width: 100%;
       height: 400px;
@@ -288,23 +514,29 @@ body {
     .info-title {
       font-size: 30px;
       color: #1e293b;
+      transition: all 0.2s;
+
     }
   
     .info-sub {
       font-size: 20px;
       color: #64748b;
       text-align: justify;
+      transition: all 0.2s;
+
     }
 
     .navbar {
       position: fixed;
       z-index: 10;
       width: 100%;
-      transition: all 0.7s;
+      transition: all 0.3s;
     }
 
     .head-page {
       visibility: hidden;
+      transition: all 0.2s;
+
     }
 
     .head-title {
@@ -320,6 +552,8 @@ body {
       bottom: 0px;
       margin: auto;
       z-index: 8;
+      transition: all 0.2s;
+
     }
 
     .hero {
@@ -327,7 +561,7 @@ body {
       height: 100vh;
       padding-left: 42px;
       padding-right: 42px;
-      padding-top: 280px;
+      padding-top: 250px;
     }
 
     .gradient {

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./src/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="universal.css">
+    <link rel="stylesheet" href="font.css">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+      <nav class="navbar bg-color">
+        <div class="head-1">
+          <div class="head-2">
+            <div class="head-title prompt-semibold">
+              <p>interaSMP</p>
+            </div>
+            <div class="head-page">
+              <a href="index.html" class="home prompt-medium ">Home</a>
+              <a href="event.html" class="event prompt-semibold ">Events</a>
+              <a href="#" class="rank prompt-medium ">Ranks</a>
+              <a href="#" class="galery prompt-medium ">Gallery</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <form class="bugs" id="events">
+        <div class="content">
+          <label for="username" class="nametag-title prompt-medium">Nametag</label>
+            <div class="nametag">
+                
+                <input type="text" name="nametag" id="nametag" autocomplete="nametag" class="nametag-input prompt-normal" placeholder="NameTag Minecraft">
+            </div>
+
+            <label for="buginfo" class="buginfo prompt-medium">Bug?</label>
+            <div>
+                <textarea id="buginfo" name="buginfo" rows="0
+                " class="bug-area" placeholder="Tulis Informasi Bug Disini"></textarea>
+                <p class="bug-text prompt-normal">Jelaskan bug yang ingin dilaporkan.</p>
+            </div>
+
+            <div>
+                <label for="bukti-foto" class="bukti-foto prompt-medium">Bukti Foto</label>
+                <div class="dropzone" id="dropzone">
+                  
+                    <p class="img-info prompt-light">Drag and drop an image here</p>
+                    <p class="img-info prompt-light">or click to upload</p>
+                </div>
+                <input id="file-upload" name="file-upload" type="file" style="display: none;">
+                <p class="prompt-normal">PNG, JPG, GIF up to 10MB</p>
+            </div>
+
+            <div class="confirm">
+              <div>
+                <button type="button" class="button-cancel prompt-medium">Cancel</button>
+              </div>
+              <div>
+                <button type="submit" class="button-save prompt-medium">Save</button>
+              </div>
+                
+            </div>
+        </div>
+    </form>
+
+    <div>
+        <p class="prompt-semibold" style="text-align: center; margin: 40px 20px 50px 20px;">Terimakasih telah membantu kami menemukan Bug!</p>
+    </div>
+
+    <footer class="footer"></footer>
+
+    <script>
+        const dropzone = document.getElementById('dropzone');
+        const fileUpload = document.getElementById('file-upload');
+
+        dropzone.addEventListener('dragover', (event) => {
+            event.preventDefault();
+            dropzone.classList.add('dragover');
+        });
+
+        dropzone.addEventListener('dragleave', () => {
+            dropzone.classList.remove('dragover');
+        });
+
+        dropzone.addEventListener('drop', (event) => {
+            event.preventDefault();
+            dropzone.classList.remove('dragover');
+
+            const file = event.dataTransfer.files[0];
+            if (file && file.type.startsWith('image/')) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    dropzone.innerHTML = `<div>
+                    <img style="margin-bottom: 10px; margin-top: 5px;" src="${e.target.result}" alt="Uploaded Image">
+                  </div>`;
+                };
+                reader.readAsDataURL(file);
+            } else {
+                alert('Please drop an image file.');
+            }
+        });
+
+        dropzone.addEventListener('click', () => {
+            fileUpload.click();
+        });
+
+        fileUpload.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            if (file && file.type.startsWith('image/')) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    dropzone.innerHTML = `<div>
+                    <img style="margin-bottom: 10px; margin-top: 5px;" src="${e.target.result}" alt="Uploaded Image">
+                  </div>`;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+</html>
